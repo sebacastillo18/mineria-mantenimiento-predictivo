@@ -5,7 +5,7 @@ library(dplyr)
 library(ggplot2)
 
 # Carga de datos (busca el archivo en la carpeta 'data' del repositorio)
-datos <- read.csv("../data/dataset_mantenimiento_minero.csv")
+datos <- read.csv("./data/dataset_mantenimiento_minero.csv")
 
 # Diagnóstico inicial (Dimensiones, tipos de datos y valores faltantes)
 dim(datos)
@@ -27,3 +27,6 @@ indices_train <- sample(1:n_total, size = 0.7 * n_total)
 
 train <- datos[indices_train, ]
 test <- datos[-indices_train, ]
+
+#Guardar sets en data para usar en los distintos modelos
+save(train, test, file = "data/datos_modelo.RData")
