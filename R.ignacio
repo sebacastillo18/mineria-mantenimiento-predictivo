@@ -1,0 +1,25 @@
+library(dplyr)
+library(ggplot2)
+
+datos <- read.csv("datos_equipos_mineros.csv")
+
+# Verificación inicial de dimensiones, estructura y valores faltantes
+dim(datos)
+str(datos)
+summary(datos) 
+colSums(is.na(datos))
+
+# Ajuste de variables categóricas
+datos <- datos %>%
+  mutate(
+    falla = as.factor(falla),
+    tipo_equipo = as.factor(tipo_equipo)
+  )
+
+# Partición 70/30 (70% para ajustar los modelos, 30% para probar generalización)
+set.seed(123) 
+n_total <- nrow(datos)
+indices_train <- sample(1:n_total, size = 0.7 * n_total)
+
+train <- datos[indices_train, ]
+test <- datos[-indices_train, ]
