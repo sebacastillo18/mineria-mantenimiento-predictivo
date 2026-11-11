@@ -1,6 +1,5 @@
-# ==============================================================================
-# 1. PREPARACIÓN Y VERIFICACIÓN DE DATOS (Nacho)
-# ==============================================================================
+
+# 1. PREPARACIÓN Y VERIFICACIÓN DE DATOS
 library(dplyr)
 library(ggplot2)
 
