@@ -31,6 +31,6 @@ resultados_entrega$prediccion_umbral_030 <- clase_alt
 write.csv2(resultados_entrega, "data/predicciones_test.csv", row.names = FALSE, fileEncoding = "latin1")
 cat("\n>>> Archivo 'data/predicciones_test.csv' exportado exitosamente.\n")
 
-# Guardar los objetos para que Jesu haga las matrices de confusión
+# Guardar los objetos
 save(modelo_log, prob_falla, clase_050, clase_alt, test, 
      file = "data/resultados_logistica.RData")
